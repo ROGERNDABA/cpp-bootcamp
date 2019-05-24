@@ -1,28 +1,34 @@
-#include "Contact.h"
+// #include "Contact.h"
 
-class Phonebook {
-   private:
-    TContact contact;
 
-    static std::vector<TContact> contactList;
-    static int numberOfContacts;
 
-   public:
-    Phonebook(TContact contact);
-    int addContact(TContact contact);
-    ~Phonebook();
-};
+// class Phonebook {
+//    private:
+//     TContact contact;
+//     std::vector<TContact> contactList = {};
 
-std::vector<TContact> Phonebook::contactList = {};
-int Phonebook::numberOfContacts = 0;
+//     static int numberOfContacts;
 
-// Phonebook::Phonebook(TContact contact) {
+//    public:
+//     Phonebook();
+//     int addContact(TContact contact);
+//     std::vector<TContact> getContacts();
+//     ~Phonebook();
+// };
+
+// int Phonebook::numberOfContacts = 0;
+
+// Phonebook::Phonebook() {
 //     Phonebook::numberOfContacts++;
 // }
 
-Phonebook::~Phonebook() {
-}
+// Phonebook::~Phonebook() {}
+
+// std::vector<TContact> Phonebook::getContacts() {
+//     return this->contactList;
+// }
 
 // int Phonebook::addContact(TContact contact) {
-//     // return 1;
+//     this->contactList.push_back(contact);
+//     return 1;
 // }
