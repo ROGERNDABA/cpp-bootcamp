@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include "Contact.h"
 
 class Contact {
    private:
@@ -18,6 +19,21 @@ class Contact {
 
    public:
     Contact(std::string, std::string, std::string, std::string, std::string, std::string, std::string, std::string, std::string, std::string, std::string, std::string);
+
+    std::string getFirstname() { return this->firstname; };
+    std::string getLastname() { return this->lastname; };
+    std::string getNickname() { return this->nickname; };
+    // std::string getLogin() { return this->login; };
+    // std::string getAddress() { return this->address; };
+    // std::string getEmailAddress() { return this->emailAddress; };
+    // std::string getPhoneNumber() { return this->phoneNumber; };
+    // std::string getBirthdayDate() { return this->birthdayDate; };
+    // std::string getFavoriteMeal() { return this->favoriteMeal; };
+    // std::string getUnderwear() { return this->underwear; };
+    // std::string getColor() { return this->color; };
+    // std::string getDarkestSecret() { return this->darkestSecret; };
+
+    Contact();
     ~Contact();
 };
 
@@ -47,5 +63,7 @@ Contact::Contact(
     this->color = color;
     this->darkestSecret = darkestSecret;
 }
+
+Contact::Contact(){};
 
 Contact::~Contact() {}
