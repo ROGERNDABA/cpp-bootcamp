@@ -10,7 +10,7 @@ int main() {
     int contactCount = 0;
     do {
         if (command == "SEARCH") {
-            std::cout << "SEARCH has been called!" << std::endl;
+            std::cout << "\nSEARCH PHONEBOOK USING INDEX\n\n";
             std::cout << "\033[32m+-------------------------------------------+" << std::endl;
             std::cout << "|\033[\033[33m               CONTACTS LIST               \033[32m|" << std::endl;
             std::cout << "\033[32m+----------+----------+----------+----------+" << std::endl;
@@ -21,19 +21,19 @@ int main() {
 
             for (int i = 0; i < 8; i++) {
                 if (phonebook[i].getFirstname() != "" && phonebook[i].getLastname() != "" && phonebook[i].getNickname() != "") {
-                    std::cout << "\033[32m|\033[31m" << std::setw(10) << i;
-                    std::cout << "\033[32m|\033[31m" << std::setw(10) << phonebook[i].getFirstname().substr(0, 10);
-                    std::cout << "\033[32m|\033[31m" << std::setw(10) << phonebook[i].getLastname().substr(0, 10);
-                    std::cout << "\033[32m|\033[31m" << std::setw(10) << phonebook[i].getNickname().substr(0, 10);
-                    std::cout << "\033[32m|\033[31m" << std::endl;
+                    std::cout << "\033[32m|\033[0m" << std::setw(10) << i;
+                    std::cout << "\033[32m|\033[0m" << std::setw(10) << phonebook[i].getFirstname().substr(0, 10);
+                    std::cout << "\033[32m|\033[0m" << std::setw(10) << phonebook[i].getLastname().substr(0, 10);
+                    std::cout << "\033[32m|\033[0m" << std::setw(10) << phonebook[i].getNickname().substr(0, 10);
+                    std::cout << "\033[32m|\033[0m" << std::endl;
                     std::cout << "\033[32m+----------+----------+----------+----------+\033[0m" << std::endl;
                     notEmpty++;
                 }
             }
             if (notEmpty) {
                 std::string sub_command = "";
-                std::cout << "Enter index of contact to search for: " << std::endl;
-                std::cin >> sub_command;
+                std::cout << "\nEnter index of contact to search for: ";
+                std::getline(std::cin, sub_command);
                 int index = std::stoi(sub_command);
                 try {
                     std::cout << "\033[32m+----------+----------+----------+----------+" << std::endl;
@@ -49,61 +49,53 @@ int main() {
                 }
                 command = "";
                 continue;
+            } else {
+                std::cout << "\033[31m Phonebook empty. There's nothing to search\033[0m" << std::endl;
             }
 
         } else if (command == "ADD") {
-            TContact t_contact;
+            TContact newContact;
 
-            std::cout << phonebook[0].getContactCount() << std::endl;
             if (phonebook[0].getContactCount() == 8) {
                 std::cout << "Phonebook is full." << std::endl;
                 command = "";
                 continue;
             }
 
-            std::cout << "Add New Contact!!!" << std::endl;
+            std::cout << "\nADD NEW CONTACT!!!\n\n";
 
             std::cout << "Please enter firstname: ";
-            std::getline(std::cin, t_contact.firstname);
+            std::getline(std::cin, newContact.firstname);
             std::cout << "Please enter lastname: ";
-            std::getline(std::cin, t_contact.lastname);
+            std::getline(std::cin, newContact.lastname);
             std::cout << "Please enter nickname: ";
-            std::getline(std::cin, t_contact.nickname);
+            std::getline(std::cin, newContact.nickname);
             std::cout << "Please enter login: ";
-            std::getline(std::cin, t_contact.login);
+            std::getline(std::cin, newContact.login);
             std::cout << "Please enter address: ";
-            std::getline(std::cin, t_contact.address);
+            std::getline(std::cin, newContact.address);
             std::cout << "Please enter emailAddress: ";
-            std::getline(std::cin, t_contact.emailAddress);
+            std::getline(std::cin, newContact.emailAddress);
             std::cout << "Please enter phoneNumber: ";
-            std::getline(std::cin, t_contact.phoneNumber);
+            std::getline(std::cin, newContact.phoneNumber);
             std::cout << "Please enter birthdayDate: ";
-            std::getline(std::cin, t_contact.birthdayDate);
+            std::getline(std::cin, newContact.birthdayDate);
             std::cout << "Please enter favoriteMeal: ";
-            std::getline(std::cin, t_contact.favoriteMeal);
+            std::getline(std::cin, newContact.favoriteMeal);
             std::cout << "Please enter underwear: ";
-            std::getline(std::cin, t_contact.underwear);
+            std::getline(std::cin, newContact.underwear);
             std::cout << "Please enter color: ";
-            std::getline(std::cin, t_contact.color);
+            std::getline(std::cin, newContact.color);
             std::cout << "Please enter darkestSecret: ";
-            std::getline(std::cin, t_contact.darkestSecret);
+            std::getline(std::cin, newContact.darkestSecret);
 
-            Contact contact(t_contact);
+            Contact contact(newContact);
             phonebook[++contactCount] = contact;
-        } else if (command == "REMOVE") {
-            std::cout << "REMOVE has been called!" << std::endl;
         }
-        std::cout << "\033[36mEnter command -> \033[0m";
+        std::cout << "\033[36mcommand -> \033[0m";
         std::getline(std::cin, command);
-        // }
-        // std::cout << contact.firstname << std::endl;
-        // std::cout << "enter name: ";
     } while (command != "EXIT");
 
-    // std::cout << "Please enter name: ";
-    // std::cin >> contact.firstname;
-    // std::cout << "Please enter name2: ";
-    // std::cin >> contact.lastname;
-
+    std::cout << "Goodbye" << std::endl;
     return 0;
 }
