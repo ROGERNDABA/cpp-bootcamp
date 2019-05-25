@@ -3,6 +3,13 @@
 #include <iostream>
 #include "Contact.class.cpp"
 
+std::string formalizeString(std::string str) {
+    if (str.length() >= 10)
+        return (str.substr(0, 9).append("."));
+    else
+        return str;
+}
+
 int main() {
     std::string command;
 
@@ -21,10 +28,18 @@ int main() {
 
             for (int i = 0; i < 8; i++) {
                 if (phonebook[i].getFirstname() != "" && phonebook[i].getLastname() != "" && phonebook[i].getNickname() != "") {
+                    Contact c = phonebook[i];
                     std::cout << "\033[32m|\033[0m" << std::setw(10) << i;
-                    std::cout << "\033[32m|\033[0m" << std::setw(10) << phonebook[i].getFirstname().substr(0, 10);
-                    std::cout << "\033[32m|\033[0m" << std::setw(10) << phonebook[i].getLastname().substr(0, 10);
-                    std::cout << "\033[32m|\033[0m" << std::setw(10) << phonebook[i].getNickname().substr(0, 10);
+
+                    std::cout << "\033[32m|\033[0m" << std::setw(10);
+                    std::cout << formalizeString(c.getFirstname());
+
+                    std::cout << "\033[32m|\033[0m" << std::setw(10);
+                    std::cout << formalizeString(c.getLastname());
+
+                    std::cout << "\033[32m|\033[0m" << std::setw(10);
+                    std::cout << formalizeString(c.getNickname());
+
                     std::cout << "\033[32m|\033[0m" << std::endl;
                     std::cout << "\033[32m+----------+----------+----------+----------+\033[0m" << std::endl;
                     notEmpty++;
@@ -36,12 +51,21 @@ int main() {
                 std::getline(std::cin, sub_command);
                 int index = std::stoi(sub_command);
                 try {
-                    std::cout << "\033[32m+----------+----------+----------+----------+" << std::endl;
-                    std::cout << "\033[32m|\033[31m" << std::setw(10) << index;
-                    std::cout << "\033[32m|\033[31m" << std::setw(10) << phonebook[index].getFirstname().substr(0, 10);
-                    std::cout << "\033[32m|\033[31m" << std::setw(10) << phonebook[index].getLastname().substr(0, 10);
-                    std::cout << "\033[32m|\033[31m" << std::setw(10) << phonebook[index].getNickname().substr(0, 10);
-                    std::cout << "\033[32m|\033[31m" << std::endl;
+                    Contact c = phonebook[index];
+
+                    std::cout << "\033[32m+----------+----------+----------+----------+\033[0m" << std::endl;
+                    std::cout << "\033[32m|\033[0m" << std::setw(10) << index;
+
+                    std::cout << "\033[32m|\033[0m" << std::setw(10);
+                    std::cout << formalizeString(c.getFirstname());
+
+                    std::cout << "\033[32m|\033[0m" << std::setw(10);
+                    std::cout << formalizeString(c.getLastname());
+
+                    std::cout << "\033[32m|\033[0m" << std::setw(10);
+                    std::cout << formalizeString(c.getNickname());
+
+                    std::cout << "\033[32m|\033[0m" << std::endl;
                     std::cout << "\033[32m+----------+----------+----------+----------+\033[0m" << std::endl;
 
                 } catch (const std::exception& e) {
