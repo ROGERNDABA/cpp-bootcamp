@@ -23,7 +23,7 @@ class Contact {
     // std::string getDarkestSecret() { return this->darkestSecret; };
     int getContactCount() { return this->contactCount; };
 
-    Contact();
+    Contact(void);
     ~Contact();
 };
 
@@ -34,6 +34,6 @@ Contact::Contact(TContact contact) {
     Contact::contactCount++;
 }
 
-Contact::Contact(){};
+Contact::Contact(void){};
 
 Contact::~Contact() {}
