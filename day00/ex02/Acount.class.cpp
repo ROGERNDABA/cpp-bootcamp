@@ -82,13 +82,11 @@ void Account::_displayTimestamp(void) {
     std::cout << "[" << buf << "] ";
 }
 void Account::displayAccountsInfos() {
-    // if (_totalNbWithdrawals) {
     _displayTimestamp();
     std::cout << " accounts:" << _nbAccounts << ";";
     std::cout << "total:" << _totalAmount << ";";
     std::cout << "deposits:" << _totalNbDeposits << ";";
     std::cout << "withdrawals:" << _totalNbWithdrawals << ";" << std::endl;
-    // }
 }
 
 void Account::displayStatus() const {
