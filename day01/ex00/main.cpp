@@ -1,6 +1,5 @@
 #include "Pony.cpp"
 
-int main(int argc, char const *argv[]) {
-    /* code */
+int main() {
     return 0;
 }

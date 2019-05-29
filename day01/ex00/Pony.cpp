@@ -8,5 +8,5 @@ Pony::~Pony() {
     std::cout << "Pony destroyed" << std::endl;
 }
 
-void ponyOnTheHeap(Pony pony){};
 void ponyOnTheStack(Pony pony){};
+void ponyOnTheHeap(Pony *pony){};
