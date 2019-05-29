@@ -1,11 +1,12 @@
 #include "Pony.cpp"
 
 int main() {
-    Pony p;
-    Pony *p1 = new Pony();
+    Pony ponyStack = ponyOnTheStack();
+    ponyStack.printPony();
 
-    delete p1;
-
-    ponyOnTheHeap(p);
+    Pony *ponyHeap = ponyOnTheHeap();
+    ponyHeap->printPony();
+    //Have to explicitly free memory with delete
+    delete ponyHeap;
     return 0;
 }
