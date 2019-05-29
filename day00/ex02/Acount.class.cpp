@@ -22,7 +22,6 @@ Account::Account(int initial_deposit) {
     std::cout << " index:" << this->_accountIndex << ";";
     std::cout << "Amount:" << this->_amount << ";";
     std::cout << "created" << std::endl;
-    // this->displayStatus();
     this->_nbAccounts++;
 };
 
