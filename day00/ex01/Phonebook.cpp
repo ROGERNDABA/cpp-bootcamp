@@ -12,7 +12,7 @@ std::string formalizeString(std::string str) {
 
 int main() {
     std::string command;
-    int availableForSearch[8];
+    int availableForSearch[8] = {-1};
 
     Contact phonebook[9];
     int contactCount = 0;
@@ -52,9 +52,15 @@ int main() {
                 std::cout << "\nEnter index of contact to search for: ";
                 std::getline(std::cin, sub_command);
                 int index = std::stoi(sub_command);
-                int* foo = std::find(std::begin(availableForSearch), std::end(availableForSearch), index);
+                bool inArray = false;
 
-                if (foo != std::end(availableForSearch)) {
+                for (int x = 7; x >= 0; x--) {
+                    if (availableForSearch[x] == index) {
+                        inArray = true;
+                    }
+                }
+
+                if (inArray) {
                     try {
                         Contact c = phonebook[index];
 
