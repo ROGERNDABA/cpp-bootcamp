@@ -6,5 +6,6 @@ int main() {
 
     delete p1;
 
+    ponyOnTheHeap(p);
     return 0;
 }

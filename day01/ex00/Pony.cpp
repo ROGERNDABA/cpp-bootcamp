@@ -9,4 +9,4 @@ Pony::~Pony() {
 }
 
 void ponyOnTheStack(Pony pony){};
-void ponyOnTheHeap(Pony *pony){};
+void ponyOnTheHeap(Pony pony){};
