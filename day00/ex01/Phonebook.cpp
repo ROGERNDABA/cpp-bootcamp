@@ -12,6 +12,7 @@ std::string formalizeString(std::string str) {
 
 int main() {
     std::string command;
+    int availableForSearch[8];
 
     Contact phonebook[9];
     int contactCount = 0;
@@ -43,6 +44,7 @@ int main() {
                     std::cout << "\033[32m|\033[0m" << std::endl;
                     std::cout << "\033[32m+----------+----------+----------+----------+\033[0m" << std::endl;
                     notEmpty++;
+                    availableForSearch[i] = i;
                 }
             }
             if (notEmpty) {
@@ -50,26 +52,32 @@ int main() {
                 std::cout << "\nEnter index of contact to search for: ";
                 std::getline(std::cin, sub_command);
                 int index = std::stoi(sub_command);
-                try {
-                    Contact c = phonebook[index];
+                int* foo = std::find(std::begin(availableForSearch), std::end(availableForSearch), index);
 
-                    std::cout << "\033[32m+----------+----------+----------+----------+\033[0m" << std::endl;
-                    std::cout << "\033[32m|\033[0m" << std::setw(10) << index;
+                if (foo != std::end(availableForSearch)) {
+                    try {
+                        Contact c = phonebook[index];
 
-                    std::cout << "\033[32m|\033[0m" << std::setw(10);
-                    std::cout << formalizeString(c.getFirstname());
+                        std::cout << "\033[32m+----------+----------+----------+----------+\033[0m" << std::endl;
+                        std::cout << "\033[32m|\033[0m" << std::setw(10) << index;
 
-                    std::cout << "\033[32m|\033[0m" << std::setw(10);
-                    std::cout << formalizeString(c.getLastname());
+                        std::cout << "\033[32m|\033[0m" << std::setw(10);
+                        std::cout << formalizeString(c.getFirstname());
 
-                    std::cout << "\033[32m|\033[0m" << std::setw(10);
-                    std::cout << formalizeString(c.getNickname());
+                        std::cout << "\033[32m|\033[0m" << std::setw(10);
+                        std::cout << formalizeString(c.getLastname());
 
-                    std::cout << "\033[32m|\033[0m" << std::endl;
-                    std::cout << "\033[32m+----------+----------+----------+----------+\033[0m" << std::endl;
+                        std::cout << "\033[32m|\033[0m" << std::setw(10);
+                        std::cout << formalizeString(c.getNickname());
 
-                } catch (const std::exception& e) {
-                    std::cerr << e.what() << '\n';
+                        std::cout << "\033[32m|\033[0m" << std::endl;
+                        std::cout << "\033[32m+----------+----------+----------+----------+\033[0m" << std::endl;
+
+                    } catch (const std::exception& e) {
+                        std::cerr << e.what() << '\n';
+                    }
+                } else {
+                    std::cout << "\n\033[31mSORRY, THAT INDEX IS EITHER INVALID OR EMPTY.\033[0m\n\n";
                 }
                 command = "";
                 continue;

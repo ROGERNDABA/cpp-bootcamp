@@ -1,6 +1,6 @@
 NAME = phonebook
 
-CC = clang++-6.0 -Wall -Wextra -Werror -o $(NAME)
+CC = clang++ -Wall -Wextra -Werror -o $(NAME)
 
 FILE = Phonebook.cpp
 

@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 
-#if !defined(CONTACT_H)
+#ifndef CONTACT_H
 #define CONTACT_H
 
 typedef struct SContact {
