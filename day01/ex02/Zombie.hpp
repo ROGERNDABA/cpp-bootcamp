@@ -1,13 +1,13 @@
+#include <iostream>
+
 class Zombie {
    private:
-    /* data */
+    std::string name;
+    std::string type;
+
    public:
-    Zombie(/* args */);
+    Zombie(std::string name);
+    Zombie(std::string name, std::string type);
+    void announce();
     ~Zombie();
 };
-
-Zombie::Zombie(/* args */) {
-}
-
-Zombie::~Zombie() {
-}

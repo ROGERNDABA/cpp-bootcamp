@@ -1,13 +1,11 @@
+#include "Zombie.cpp"
+
 class ZombieEvent {
    private:
-    /* data */
    public:
-    ZombieEvent(/* args */);
+    ZombieEvent();
+    void setZombieType();
+    Zombie* newZombie(std::string name);
+    Zombie* randomChump();
     ~ZombieEvent();
 };
-
-ZombieEvent::ZombieEvent(/* args */) {
-}
-
-ZombieEvent::~ZombieEvent() {
-}
