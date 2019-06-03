@@ -1,6 +1,6 @@
-NAME = megaphone.exe
+NAME = megaphone
 
-CC = g++ -Wall -Wextra -Werror -o $(NAME)
+CC = clang++ -Wall -Wextra -Werror -o $(NAME)
 
 FILE = megaphone.cpp
 

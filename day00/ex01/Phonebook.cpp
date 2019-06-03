@@ -63,22 +63,19 @@ int main() {
                 if (inArray) {
                     try {
                         Contact c = phonebook[index];
-
-                        std::cout << "\033[32m+----------+----------+----------+----------+\033[0m" << std::endl;
-                        std::cout << "\033[32m|\033[0m" << std::setw(10) << index;
-
-                        std::cout << "\033[32m|\033[0m" << std::setw(10);
-                        std::cout << formalizeString(c.getFirstname());
-
-                        std::cout << "\033[32m|\033[0m" << std::setw(10);
-                        std::cout << formalizeString(c.getLastname());
-
-                        std::cout << "\033[32m|\033[0m" << std::setw(10);
-                        std::cout << formalizeString(c.getNickname());
-
-                        std::cout << "\033[32m|\033[0m" << std::endl;
-                        std::cout << "\033[32m+----------+----------+----------+----------+\033[0m" << std::endl;
-
+                        std::cout << std::endl;
+                        std::cout << std::setw(16) << "Firstname : " << c.getFirstname() << std::endl;
+                        std::cout << std::setw(16) << "Lastname : " << c.getLastname() << std::endl;
+                        std::cout << std::setw(16) << "Nickname : " << c.getNickname() << std::endl;
+                        std::cout << std::setw(16) << "Login : " << c.getLogin() << std::endl;
+                        std::cout << std::setw(16) << "Address : " << c.getAddress() << std::endl;
+                        std::cout << std::setw(16) << "EmailAddress : " << c.getEmailAddress() << std::endl;
+                        std::cout << std::setw(16) << "PhoneNumber : " << c.getPhoneNumber() << std::endl;
+                        std::cout << std::setw(16) << "BirthdayDate : " << c.getBirthdayDate() << std::endl;
+                        std::cout << std::setw(16) << "FavoriteMeal : " << c.getFavoriteMeal() << std::endl;
+                        std::cout << std::setw(16) << "Underwear : " << c.getUnderwear() << std::endl;
+                        std::cout << std::setw(16) << "Color : " << c.getColor() << std::endl;
+                        std::cout << std::setw(16) << "DarkestSecret : " << c.getDarkestSecret() << std::endl;
                     } catch (const std::exception& e) {
                         std::cerr << e.what() << '\n';
                     }
