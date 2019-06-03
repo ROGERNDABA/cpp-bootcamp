@@ -6,7 +6,7 @@
 /*   By: roger <rogerndaba@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 14:27:21 by roger             #+#    #+#             */
-/*   Updated: 2019/06/03 15:43:09 by roger            ###   ########.fr       */
+/*   Updated: 2019/06/03 15:57:35 by roger            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 int main() {
     ZombieEvent zombieEvent;
 
+    // new zombie without a type, default given as 'Lastman'
     Zombie *zombie1 = zombieEvent.newZombie("Pumba");
     zombieEvent.setZombieType(zombie1, "Fun");
     zombie1->announce();
@@ -30,6 +31,10 @@ int main() {
 
     // randow Zombie
     Zombie *randomZomie1 = zombieEvent.randomChump();
+
+    // set random zombies' type
+    zombieEvent.setZombieType(randomZomie1, "Randy");
+    randomZomie1->announce();
 
     // Zombies on the stack have to be manually done away with
     delete zombie2;
