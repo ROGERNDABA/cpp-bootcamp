@@ -6,6 +6,7 @@ class Zombie {
     std::string type;
 
    public:
+    Zombie();
     Zombie(std::string);
     Zombie(std::string, std::string);
     void setType(std::string);

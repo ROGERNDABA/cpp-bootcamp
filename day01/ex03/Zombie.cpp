@@ -12,6 +12,8 @@ Zombie::Zombie(std::string name, std::string type) {
     this->announce();
 }
 
+Zombie::Zombie() {}
+
 Zombie::~Zombie() {
     std::cout << "\033[31mZombie demolished\033[0m" << std::endl;
 }
