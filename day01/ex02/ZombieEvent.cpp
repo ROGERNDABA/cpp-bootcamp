@@ -1,11 +1,12 @@
 #include "ZombieEvent.hpp"
 
 ZombieEvent::ZombieEvent() {
-    std::cout << "\n<--- ZombieEvent() --->\n";
+    std::cout << "<--- ZombieEvent() --->\n";
 }
 
 ZombieEvent::~ZombieEvent() {
-    std::cout << "~ZombieEvent destroyed" << std::endl;
+    std::cout << "\033[31m~ZombieEvent destroyed\033[0m"
+              << std::endl;
 }
 
 Zombie *ZombieEvent::newZombie(std::string name) {
@@ -19,7 +20,7 @@ Zombie *ZombieEvent::newZombie(std::string name, std::string type) {
 }
 
 void ZombieEvent::setZombieType(Zombie *zombie, std::string type) {
-    std::cout << "\n<--- setZombieType() --->\n";
+    std::cout << "<--- setZombieType() --->\n";
     zombie->setType(type);
 }
 
