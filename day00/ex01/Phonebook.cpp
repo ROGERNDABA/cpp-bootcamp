@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Phonebook.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: roger <rogerndaba@gmail.com>               +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/06/03 14:22:32 by roger             #+#    #+#             */
+/*   Updated: 2019/06/03 14:22:34 by roger            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <string.h>
 #include <iomanip>
 #include <iostream>
@@ -22,13 +34,13 @@ int main() {
             std::cout << "\033[32m+-------------------------------------------+" << std::endl;
             std::cout << "|\033[\033[33m               CONTACTS LIST               \033[32m|" << std::endl;
             std::cout << "\033[32m+----------+----------+----------+----------+" << std::endl;
-            std::cout << "\033[32m|\033[31m   Index  \033[32m|\033[31mFirst Name\033[32m|\033[31mLast Name \033[32m|\033[31mNick Name \033[32m|\033[31m" << std::endl;
+            std::cout << "\033[32m|\033[31m   Index  \033[32m|\033[31mFirstname \033[32m|\033[31m Lastname \033[32m|\033[31m Nickname \033[32m|\033[31m" << std::endl;
             std::cout << "\033[32m+----------+----------+----------+----------+\033[0m" << std::endl;
 
             int notEmpty = 0;
 
             for (int i = 0; i < 8; i++) {
-                if (phonebook[i].getFirstname() != "" && phonebook[i].getLastname() != "" && phonebook[i].getNickname() != "") {
+                if (phonebook[i].getFirstname() != "" || phonebook[i].getLastname() != "" || phonebook[i].getNickname() != "") {
                     Contact c = phonebook[i];
                     std::cout << "\033[32m|\033[0m" << std::setw(10) << i;
 
@@ -59,7 +71,6 @@ int main() {
                         inArray = true;
                     }
                 }
-
                 if (inArray) {
                     try {
                         Contact c = phonebook[index];
@@ -127,7 +138,7 @@ int main() {
             Contact contact(newContact);
             phonebook[++contactCount] = contact;
         }
-        std::cout << "\033[36mcommand -> \033[0m";
+        std::cout << "\033[36mcommand (\033[0mADD, SEARCH OR EXIT\033[36m) -> \033[0m";
         std::getline(std::cin, command);
     } while (command != "EXIT");
 

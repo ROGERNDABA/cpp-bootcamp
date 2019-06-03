@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Acount.class.cpp                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: roger <rogerndaba@gmail.com>               +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/06/03 14:22:23 by roger             #+#    #+#             */
+/*   Updated: 2019/06/03 14:22:25 by roger            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <ctime>
 #include <iostream>
 #include "resources/Account.class.hpp"
@@ -12,11 +24,8 @@ Account::Account(int initial_deposit) {
     this->_amount = 0;
     this->_nbDeposits = 0;
     this->_nbWithdrawals = 0;
-    // if (initial_deposit > 0) {
     this->_amount += initial_deposit;
     this->_totalAmount += initial_deposit;
-    // this->_totalNbDeposits++;
-    // }
     this->_accountIndex = this->_nbAccounts;
     this->_displayTimestamp();
     std::cout << " index:" << this->_accountIndex << ";";
