@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Pony.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: roger <rogerndaba@gmail.com>               +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/06/03 14:26:55 by roger             #+#    #+#             */
+/*   Updated: 2019/06/03 14:26:56 by roger            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Pony.hpp"
 
 Pony::Pony() {
@@ -6,7 +18,8 @@ Pony::Pony() {
 
 Pony::Pony(std::string ponyWhere) {
     this->ponyWhere = ponyWhere;
-    std::cout << "Pony created on the " << this->ponyWhere << std::endl;
+    std::cout << std::endl
+              << "Pony created on the " << this->ponyWhere << std::endl;
 }
 
 void Pony::printPony() {

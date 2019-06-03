@@ -4,8 +4,8 @@ class ZombieEvent {
    private:
    public:
     ZombieEvent();
-    void setZombieType();
-    Zombie* newZombie(std::string name);
+    void setZombieType(Zombie*, std::string);
+    Zombie* newZombie(std::string);
     Zombie* randomChump();
     ~ZombieEvent();
 };
