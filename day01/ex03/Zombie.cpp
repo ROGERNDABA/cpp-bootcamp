@@ -15,7 +15,7 @@ Zombie::Zombie(std::string name, std::string type) {
 Zombie::Zombie() {}
 
 Zombie::~Zombie() {
-    std::cout << "\033[31mZombie demolished\033[0m" << std::endl;
+    std::cout << "\033[31mZombie " << this->name << " demolished\033[0m" << std::endl;
 }
 
 void Zombie::setType(std::string type) {
@@ -24,6 +24,14 @@ void Zombie::setType(std::string type) {
 
 std::string Zombie::getType() {
     return this->type;
+}
+
+void Zombie::setName(std::string name) {
+    this->name = name;
+}
+
+std::string Zombie::getName() {
+    return this->name;
 }
 
 void Zombie::announce() {

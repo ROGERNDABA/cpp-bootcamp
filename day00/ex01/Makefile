@@ -12,7 +12,7 @@
 
 NAME = phonebook
 
-CC = clang++ -Wall -Wextra -Werror -o $(NAME)
+CC = clang++ -Wall -Wextra -Werror -std=c++98 -o $(NAME)
 
 FILE = Phonebook.cpp
 

@@ -1,10 +1,14 @@
 #include "Zombie.cpp"
 
-class ZombieHorde {
+class ZombieHorde : public Zombie {
    private:
-    Zombie *Zombies;
+    Zombie *zombies;
+
+    static int zombieCount;
 
    public:
     ZombieHorde(int);
+    int getZombieCount();
+    Zombie *getZombies();
     ~ZombieHorde();
 };

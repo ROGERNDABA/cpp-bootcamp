@@ -2,7 +2,7 @@
 
 Zombie::Zombie(std::string name) {
     this->name = name;
-    // this->type = "Lastman";
+    this->type = "Lastman";
     this->announce();
 }
 
