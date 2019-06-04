@@ -25,8 +25,9 @@ void ZombieEvent::setZombieType(Zombie *zombie, std::string type) {
 }
 
 Zombie *ZombieEvent::randomChump() {
-    srand(time(0));
-    std::string randomNames[10] = {"ZAZ", "Vikingz", "Drakest", "dfddfd", "dfdfdf", "dfdfdfdf", "dfdfdfdfdf", "dfdfdfdfdf000", "dfdfdfdfdf111", "dfdfdfdfdf0000000000"};
-    Zombie *randomZombie = new Zombie(randomNames[rand() % 10]);
+    std::string randomNames[10] = {"Kevin_Mitnick", "Kevin_Poulson", "Adrian_Lamo",
+                                   "Stephen_Wozniak", "Loyd_Blankenship", "Michael_Calce", "Robert_Morris",
+                                   "The_Masters_Of_Deception", "David_LSmith", "Sven_Jaschan"};
+    Zombie *randomZombie = new Zombie(randomNames[std::rand() % 10]);
     return randomZombie;
 }

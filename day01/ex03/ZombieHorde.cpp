@@ -6,19 +6,16 @@ int ZombieHorde::getZombieCount() {
     return this->zombieCount;
 }
 
-// Zombie *ZombieHorde::getZombies() {
-//     return this->zombies;
-// }
-
 ZombieHorde::ZombieHorde(int numberOfZombies) {
     Zombie z[numberOfZombies];
     this->zombies = z;
-    this->zombies = new Zombie[numberOfZombies];
     for (int i = 0; i < numberOfZombies; i++) {
+        std::string randomNames[10] = {"Kevin_Mitnick", "Kevin_Poulson", "Adrian_Lamo",
+                                       "Stephen_Wozniak", "Loyd_Blankenship", "Michael_Calce", "Robert_Morris",
+                                       "The_Masters_Of_Deception", "David_LSmith", "Sven_Jaschan"};
         this->zombieCount++;
-        this->zombies[i].setName("sfdsds");
-        this->zombies[i].setType("sfdsds");
-        std::cout << "Zombie " << zombieCount << std::endl;
+        // std::cout << "Zombie " << zombieCount << std::endl;
+        this->zombies[i].setName(randomNames[std::rand() % 10]);
         this->zombies[i].announce();
     }
 }
