@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef PONY_H
+#define PONY_H
 #include <iostream>
 
 class Pony {
@@ -17,8 +19,10 @@ class Pony {
     std::string ponyWhere;
 
    public:
-    Pony(std::string ponyWhere);
-    Pony();
+    Pony(std::string);
+    Pony(void);
     ~Pony();
     void printPony();
 };
+
+#endif

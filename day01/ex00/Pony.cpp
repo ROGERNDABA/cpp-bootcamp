@@ -42,9 +42,11 @@ Pony::~Pony() {
 
 Pony ponyOnTheStack() {
     Pony pony("STACK");
+    std::cout << "Stack ---> " << &pony << std::endl;
     return pony;
 };
 Pony *ponyOnTheHeap() {
     Pony *pony = new Pony("HEAP");
+    std::cout << "Stack ---> " << &pony << std::endl;
     return pony;
 };
