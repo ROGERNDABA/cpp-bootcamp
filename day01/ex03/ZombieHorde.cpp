@@ -14,12 +14,17 @@ ZombieHorde::ZombieHorde(int numberOfZombies) {
                                        "Stephen_Wozniak", "Loyd_Blankenship", "Michael_Calce", "Robert_Morris",
                                        "The_Masters_Of_Deception", "David_LSmith", "Sven_Jaschan"};
         this->zombieCount++;
-        // std::cout << "Zombie " << zombieCount << std::endl;
         this->zombies[i].setName(randomNames[std::rand() % 10]);
-        this->zombies[i].announce();
     }
+    this->announce();
 }
 
 ZombieHorde::~ZombieHorde() {
     std::cout << "ZombieHorde destroyed" << std::endl;
+}
+
+void ZombieHorde::announce() {
+    for (int i = 0; i < this->zombieCount; i++) {
+        this->zombies[i].announce();
+    }
 }

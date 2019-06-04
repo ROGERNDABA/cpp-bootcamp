@@ -11,5 +11,6 @@ class ZombieHorde : public Zombie {
     int getZombieCount();
     Zombie *getZombies();
     Zombie randomChump();
+    void announce();
     ~ZombieHorde();
 };
