@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "Pony.hpp"
-
+#include <time.h>
 Pony::Pony() {
     std::cout << "Default Pony created" << std::endl;
 }
@@ -20,6 +20,10 @@ Pony::Pony(std::string ponyWhere) {
     this->ponyWhere = ponyWhere;
     std::cout << std::endl
               << "Pony created on the " << this->ponyWhere << std::endl;
+}
+
+void Pony::setPonyWhere(std::string ponyWhere) {
+    this->ponyWhere = ponyWhere;
 }
 
 void Pony::printPony() {
@@ -41,12 +45,17 @@ Pony::~Pony() {
 }
 
 Pony ponyOnTheStack() {
+    clock_t t = 0;
     Pony pony("STACK");
-    std::cout << "Stack ---> " << &pony << std::endl;
+    t = clock() - t;
+    std::cout << "Access time ---> " << t << std::endl;
     return pony;
 };
+
 Pony *ponyOnTheHeap() {
+    clock_t t = 0;
     Pony *pony = new Pony("HEAP");
-    std::cout << "Stack ---> " << &pony << std::endl;
+    t = clock() - t;
+    std::cout << "Access time ---> " << t << std::endl;
     return pony;
 };

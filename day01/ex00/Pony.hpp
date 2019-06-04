@@ -23,6 +23,8 @@ class Pony {
     Pony(void);
     ~Pony();
     void printPony();
+    // std::string getPonyWhere();
+    void setPonyWhere(std::string);
 };
 
 #endif
