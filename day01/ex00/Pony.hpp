@@ -24,7 +24,7 @@ class Pony {
     ~Pony();
     void printPony();
     // std::string getPonyWhere();
-    void setPonyWhere(std::string);
+    // void setPonyWhere(std::string);
 };
 
 #endif

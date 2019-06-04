@@ -22,10 +22,6 @@ Pony::Pony(std::string ponyWhere) {
               << "Pony created on the " << this->ponyWhere << std::endl;
 }
 
-void Pony::setPonyWhere(std::string ponyWhere) {
-    this->ponyWhere = ponyWhere;
-}
-
 void Pony::printPony() {
     std::cout << "                       ~~%%%%%%%%_,_," << std::endl;
     std::cout << "                    ~~%%%%%%%%%-'/./" << std::endl;
