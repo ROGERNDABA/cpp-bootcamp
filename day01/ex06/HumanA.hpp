@@ -6,7 +6,7 @@
 /*   By: Roger Ndaba <rogerndaba@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 11:34:53 by Roger Ndaba       #+#    #+#             */
-/*   Updated: 2019/06/05 11:45:43 by Roger Ndaba      ###   ########.fr       */
+/*   Updated: 2019/06/05 11:54:06 by Roger Ndaba      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class HumanA {
     HumanA(/* args */);
     HumanA(std::string name, Weapon weapon);
     ~HumanA();
-    void attack();
+    void attack() const;
 };
 
 #endif  // !HUMANA_HPP

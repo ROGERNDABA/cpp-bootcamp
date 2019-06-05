@@ -16,5 +16,10 @@ std::string Weapon::getType() const {
 }
 
 void Weapon::setType(std::string type) {
-    this->type = type;
+    this->getType() = type;
 }
+
+// void Weapon::attack(std::string name) const {
+//     std::cout << name << " attacks with his ";
+//     std::cout << this->getType() << std::endl;
+// }
