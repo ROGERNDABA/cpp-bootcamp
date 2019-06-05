@@ -15,7 +15,8 @@
 int main() {
     std::string theString = "HI THIS IS BRAIN";
     std::string *ptrString = new std::string(theString);
-    // std::string refString = &ptrString;
-    std::cout << ptrString << std::endl;
+    std::string newString = *ptrString;
+    delete ptrString;
+    std::cout << newString << std::endl;
     return 0;
 }
