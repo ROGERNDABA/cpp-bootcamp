@@ -6,7 +6,7 @@
 /*   By: Roger Ndaba <rogerndaba@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/04 14:26:10 by rmdaba            #+#    #+#             */
-/*   Updated: 2019/06/04 14:27:24 by Roger Ndaba      ###   ########.fr       */
+/*   Updated: 2019/06/06 10:12:51 by Roger Ndaba      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 Zombie::Zombie(std::string name) {
     this->name = name;
     // this->type = "Lastman";
-    std::cout << "/* message */" << std::endl;
     this->announce();
 }
 
@@ -48,6 +47,6 @@ std::string Zombie::getName() {
 }
 
 void Zombie::announce() {
-    std::cout << "<\033[32m" << this->name << "\033[36m ";
-    std::cout << this->type << "\033[0m> Braiiiiiiinnnssss..." << std::endl;
+    std::cout << "<\033[32m" << this->name << "\033[36m (";
+    std::cout << this->type << ")\033[0m> Braiiiiiiinnnssss..." << std::endl;
 }

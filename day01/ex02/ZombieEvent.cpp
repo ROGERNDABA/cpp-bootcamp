@@ -6,7 +6,7 @@
 /*   By: Roger Ndaba <rogerndaba@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/04 14:27:51 by Roger Ndaba       #+#    #+#             */
-/*   Updated: 2019/06/04 14:27:53 by Roger Ndaba      ###   ########.fr       */
+/*   Updated: 2019/06/06 10:13:13 by Roger Ndaba      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ Zombie *ZombieEvent::newZombie(std::string name, std::string type) {
 }
 
 void ZombieEvent::setZombieType(Zombie *zombie, std::string type) {
-    std::cout << "<--- setZombieType() --->\n";
     zombie->setType(type);
 }
 
