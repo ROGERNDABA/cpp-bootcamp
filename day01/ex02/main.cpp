@@ -6,7 +6,7 @@
 /*   By: Roger Ndaba <rogerndaba@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 14:27:21 by roger             #+#    #+#             */
-/*   Updated: 2019/06/06 10:16:48 by Roger Ndaba      ###   ########.fr       */
+/*   Updated: 2019/06/06 14:34:48 by Roger Ndaba      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int main() {
     ZombieEvent zombieEvent;
 
-    // new zombie without a type, default given as 'Lastman'
+    // new zombie without a type, default given as Random
     Zombie *zombie1 = zombieEvent.newZombie("Pumba");
     zombieEvent.setZombieType(zombie1, "Fun");
     zombie1->announce();
