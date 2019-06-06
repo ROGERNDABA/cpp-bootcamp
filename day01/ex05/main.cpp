@@ -6,7 +6,7 @@
 /*   By: Roger Ndaba <rogerndaba@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 09:23:20 by Roger Ndaba       #+#    #+#             */
-/*   Updated: 2019/06/05 11:31:42 by Roger Ndaba      ###   ########.fr       */
+/*   Updated: 2019/06/06 10:54:59 by Roger Ndaba      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ int main() {
     std::cout << "human2.identity().identity()" << std::endl;
 
     // std::cout << h.getBrain().setWeight(10) << std::endl;
-    std::cout << "Brain weight --> " << human1.getBrain().getWeight() << "g" << std::endl;
-    std::cout << "Brain capacity --> " << human1.getBrain().getCapacity() << "%" << std::endl;
+    std::cout << "Brain weight --> " << human2.getBrain().getWeight() << "g" << std::endl;
+    std::cout << "Brain capacity --> " << human2.getBrain().getCapacity() << "%" << std::endl;
 
     return 0;
 }

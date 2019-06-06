@@ -1,35 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Roger Ndaba <rogerndaba@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/05 08:39:39 by Roger Ndaba       #+#    #+#             */
-/*   Updated: 2019/06/06 10:54:28 by Roger Ndaba      ###   ########.fr       */
+/*   Created: 2019/06/06 11:32:53 by Roger Ndaba       #+#    #+#             */
+/*   Updated: 2019/06/06 11:33:20 by Roger Ndaba      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BRAIN_HPP
-#define BRAIN_HPP
 #include <iostream>
-#include <sstream>
 
-class Brain {
-   private:
-    int weight;
-    int capacity;
-    // Brain *brainAddress;
-
-   public:
-    Brain();
-    Brain(int weight, int capacity);
-    ~Brain();
-    std::string identity() const;
-    void setWeight(int);
-    void setCapacity(int);
-    int getCapacity() const;
-    int getWeight() const;
-};
-
-#endif  // !BRAIN_HPP
+int main(int argc, char const *argv[]) {
+        return 0;
+}
