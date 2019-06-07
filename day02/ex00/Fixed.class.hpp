@@ -6,7 +6,7 @@
 /*   By: Roger Ndaba <rogerndaba@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/06 12:14:55 by Roger Ndaba       #+#    #+#             */
-/*   Updated: 2019/06/06 12:18:09 by Roger Ndaba      ###   ########.fr       */
+/*   Updated: 2019/06/07 08:47:08 by Roger Ndaba      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,11 @@ class Fixed {
     static const int _nbOfFractBits;
 
    public:
-    Fixed(void);
-    Fixed(int);
+    Fixed();
+    Fixed(Fixed const &);
+    Fixed &operator=(Fixed const &);
+    int getRawBits() const;
+    void setRawBits(int const raw);
     ~Fixed();
 };
 
