@@ -6,7 +6,7 @@
 /*   By: Roger Ndaba <rogerndaba@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/06 12:14:51 by Roger Ndaba       #+#    #+#             */
-/*   Updated: 2019/06/07 11:25:00 by Roger Ndaba      ###   ########.fr       */
+/*   Updated: 2019/06/07 12:38:23 by Roger Ndaba      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,15 @@ Fixed::Fixed() : _fixedPointValue(0) {
     return;
 }
 
-Fixed::Fixed(int const fpv) : _fixedPointValue(fpv) {
+Fixed::Fixed(int const fpv) {
     std::cout << "Int constructor called" << std::endl;
+    this->_fixedPointValue = fpv << this->_nbOfFractBits;
     return;
 }
 
-Fixed::Fixed(float const fpv) : _fixedPointValue(fpv) {
+Fixed::Fixed(float const fpv) {
     std::cout << "Float constructor called" << std::endl;
+    this->_fixedPointValue = roundf(fpv * (1 << this->_nbOfFractBits));
     return;
 }
 
@@ -36,10 +38,10 @@ Fixed::Fixed(Fixed const &copy) : _fixedPointValue(copy._fixedPointValue) {
 }
 
 float Fixed::toFloat(void) const {
-    return this->_fixedPointValue;
+    return (float)this->_fixedPointValue / (float)(1 << this->_nbOfFractBits);
 }
 int Fixed::toInt(void) const {
-    return this->_fixedPointValue;
+    return this->_fixedPointValue >> this->_nbOfFractBits;
 }
 
 Fixed &Fixed::operator=(Fixed const &rhs) {
@@ -65,6 +67,6 @@ Fixed::~Fixed() {
 }
 
 std::ostream &operator<<(std::ostream &o, Fixed const &rhs) {
-    o << rhs.getRawBits();
+    o << rhs.toFloat();
     return o;
 };
