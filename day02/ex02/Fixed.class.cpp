@@ -6,7 +6,7 @@
 /*   By: Roger Ndaba <rogerndaba@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/06 12:14:51 by Roger Ndaba       #+#    #+#             */
-/*   Updated: 2019/06/07 13:48:39 by Roger Ndaba      ###   ########.fr       */
+/*   Updated: 2019/06/07 15:12:30 by Roger Ndaba      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,18 +95,17 @@ Fixed Fixed::operator+(Fixed const &rhs) const {
     return (Fixed(this->toFloat() + rhs.toFloat()));
 }
 Fixed Fixed::operator-(Fixed const &rhs) const {
-    return (Fixed(this->toFloat() + rhs.toFloat()));
+    return (Fixed(this->toFloat() - rhs.toFloat()));
 }
 Fixed Fixed::operator*(Fixed const &rhs) const {
-    std::cout << "----> " << _fixedPointValue << std::endl;
-    return (Fixed(this->toFloat() + rhs.toFloat()));
+    return (Fixed(this->toFloat() * rhs.toFloat()));
 }
 Fixed Fixed::operator/(Fixed const &rhs) const {
     if (rhs.getRawBits() == 0) {
         std::cout << "Can't" << std::endl;
         return *this;
     }
-    return (Fixed(this->toFloat() + rhs.toFloat()));
+    return (Fixed(this->toFloat() / rhs.toFloat()));
 }
 Fixed &Fixed::operator++() {
     this->_fixedPointValue++;
@@ -127,8 +126,24 @@ Fixed Fixed::operator--(int) {
     this->operator--();
     return (tmp);
 }
+Fixed &Fixed::min(Fixed &lhs, Fixed &rhs) {
+    return ((lhs < rhs) ? lhs : rhs);
+}
 
-std::ostream &operator<<(std::ostream &o, Fixed const &rhs) {
+const Fixed &Fixed::min(Fixed const &lhs, Fixed const &rhs) {
+    return ((lhs < rhs) ? lhs : rhs);
+}
+
+Fixed &Fixed::max(Fixed &lhs, Fixed &rhs) {
+    return ((lhs > rhs) ? lhs : rhs);
+}
+
+const Fixed &Fixed::max(Fixed const &lhs, Fixed const &rhs) {
+    return ((lhs > rhs) ? lhs : rhs);
+}
+
+std::ostream &
+operator<<(std::ostream &o, Fixed const &rhs) {
     o << rhs.toFloat();
     return o;
 };

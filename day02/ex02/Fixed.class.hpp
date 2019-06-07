@@ -6,7 +6,7 @@
 /*   By: Roger Ndaba <rogerndaba@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/06 12:14:55 by Roger Ndaba       #+#    #+#             */
-/*   Updated: 2019/06/07 13:29:19 by Roger Ndaba      ###   ########.fr       */
+/*   Updated: 2019/06/07 15:12:33 by Roger Ndaba      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,11 @@ class Fixed {
     Fixed operator++(int);
     Fixed &operator--();
     Fixed operator--(int);
+
+    static Fixed &min(Fixed &, Fixed &);
+    static const Fixed &min(Fixed const &, Fixed const &);
+    static Fixed &max(Fixed &, Fixed &);
+    static const Fixed &max(Fixed const &, Fixed const &);
 
     float toFloat(void) const;
     int toInt(void) const;
