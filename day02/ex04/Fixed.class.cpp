@@ -6,7 +6,7 @@
 /*   By: Roger Ndaba <rogerndaba@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/06 12:14:51 by Roger Ndaba       #+#    #+#             */
-/*   Updated: 2019/06/07 16:45:02 by Roger Ndaba      ###   ########.fr       */
+/*   Updated: 2019/06/07 15:12:30 by Roger Ndaba      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,7 @@ Fixed Fixed::operator*(Fixed const &rhs) const {
 }
 Fixed Fixed::operator/(Fixed const &rhs) const {
     if (rhs.getRawBits() == 0) {
-        std::cout << "Can't do division by 0. ";
+        std::cout << "Can't" << std::endl;
         return *this;
     }
     return (Fixed(this->toFloat() / rhs.toFloat()));

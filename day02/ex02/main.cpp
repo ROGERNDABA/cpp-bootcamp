@@ -34,6 +34,19 @@ int main(void) {
     std::cout << "\ta <= b : " << (a <= b) << std::endl;
     std::cout << "\ta >= b : " << (a >= b) << std::endl;
 
+    std::cout << "\nCREATE C" << std::endl;
+    Fixed c(2.5f);
+    underline(8);
+    std::cout << "\tc   : " << c << std::endl;
+
+    std::cout << "\nARITHMETIC" << std::endl;
+    underline(10);
+    std::cout << "\t(b + c) : " << b + c << std::endl;
+    std::cout << "\t(b - c) : " << b - c << std::endl;
+    std::cout << "\t(b * c) : " << b * c << std::endl;
+    std::cout << "\t(b / c) : " << b / c << std::endl;
+    std::cout << "\t(b / 0) : " << b / 0 << std::endl;
+
     std::cout << "\nMIN & MAX" << std::endl;
     underline(9);
     std::cout << "\tmin(a, b) : " << Fixed::min(a, b) << std::endl;
