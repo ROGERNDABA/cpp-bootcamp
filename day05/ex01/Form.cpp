@@ -6,23 +6,23 @@
 /*   By: Roger Ndaba <rogerndaba@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/11 15:31:44 by Roger Ndaba       #+#    #+#             */
-/*   Updated: 2019/06/12 14:21:54 by Roger Ndaba      ###   ########.fr       */
+/*   Updated: 2019/06/12 14:37:18 by Roger Ndaba      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
 // Form::Form() {}
-Form::Form() : _signed(false), _name(""), _toExcecute(1), _toSign(1) {
+Form::Form() : _signed(false), _name(""), _toExecute(1), _toSign(1) {
 }
 
-Form::Form(std::string name, int toSign, int toExcecute) : _signed(false),
-                                                           _name(name),
-                                                           _toExcecute(toExcecute),
-                                                           _toSign(toSign) {
-    if (this->_toExcecute < 1 || this->_toSign < 1) {
+Form::Form(std::string name, int toSign, int toExecute) : _signed(false),
+                                                          _name(name),
+                                                          _toExecute(toExecute),
+                                                          _toSign(toSign) {
+    if (this->_toExecute < 1 || this->_toSign < 1) {
         throw Form::GradeTooHighException();
-    } else if (this->_toExcecute > 150 || this->_toSign > 150) {
+    } else if (this->_toExecute > 150 || this->_toSign > 150) {
         throw Form::GradeTooLowException();
     }
     return;
@@ -36,7 +36,7 @@ Form& Form::operator=(Form const& rhs) {
 }
 
 Form::Form(Form const& copy) : _name(copy._name),
-                               _toExcecute(copy._toExcecute),
+                               _toExecute(copy._toExecute),
                                _toSign(copy._toSign) {
     *this = copy;
     return;
@@ -58,8 +58,8 @@ bool Form::getSigned() const {
 std::string Form::getName() const {
     return this->_name;
 };
-int Form::getToExcecute() const {
-    return this->_toExcecute;
+int Form::getToExecute() const {
+    return this->_toExecute;
 };
 int Form::getToSign() const {
     return this->_toSign;
@@ -101,7 +101,7 @@ Form::GradeTooLowException& Form::GradeTooLowException::operator=(Form::GradeToo
 
 std::ostream& operator<<(std::ostream& o, Form const& rhs) {
     o << rhs.getName() << " is " << ((rhs.getSigned()) ? "sigend " : "not signed ")
-      << "and needs a grade > " << rhs.getToExcecute() << " to excecute and a grade > "
+      << "and needs a grade > " << rhs.getToExecute() << " to execute and a grade > "
       << rhs.getToSign() << " to be signed";
     return o;
 };
