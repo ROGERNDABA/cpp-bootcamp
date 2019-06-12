@@ -6,7 +6,7 @@
 /*   By: Roger Ndaba <rogerndaba@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/11 15:30:51 by Roger Ndaba       #+#    #+#             */
-/*   Updated: 2019/06/12 10:05:33 by Roger Ndaba      ###   ########.fr       */
+/*   Updated: 2019/06/12 13:16:48 by Roger Ndaba      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,18 @@
 #define FORM_H
 #include "Bureaucrat.hpp"
 
-class Form {
+class Form : public Bureaucrat {
    private:
     bool _signed;
     const std::string _name;
-    const int _toSign;
     const int _toExcecute;
+    const int _toSign;
 
    public:
-       Form();
+    Form();
+    Form(std::string, int, int);
+    void setToExcecute(int const toExcecute);
+    void setToSign(int const toSign);
     ~Form();
 };
 
