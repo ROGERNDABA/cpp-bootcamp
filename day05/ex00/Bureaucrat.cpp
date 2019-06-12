@@ -6,7 +6,7 @@
 /*   By: Roger Ndaba <rogerndaba@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/11 08:33:44 by Roger Ndaba       #+#    #+#             */
-/*   Updated: 2019/06/12 11:29:11 by Roger Ndaba      ###   ########.fr       */
+/*   Updated: 2019/06/12 12:41:48 by Roger Ndaba      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,12 @@ Bureaucrat::GradeTooHighException::GradeTooHighException(Bureaucrat::GradeTooHig
 }
 
 const char* Bureaucrat::GradeTooHighException::what() const throw() {
-    return ("Grade is too high");
+    return ("\033[31mGrade is too high\033[0m");
 }
 
 Bureaucrat::GradeTooHighException& Bureaucrat::GradeTooHighException::operator=(Bureaucrat::GradeTooHighException const& rhs) {
+    if (this != &rhs) {
+    }
     return *this;
 }
 
@@ -46,16 +48,18 @@ Bureaucrat::GradeTooLowException::GradeTooLowException(Bureaucrat::GradeTooLowEx
 }
 
 const char* Bureaucrat::GradeTooLowException::what() const throw() {
-    return ("Grade is too low");
+    return ("\033[31mGrade is too low\033[0m");
 }
 
 Bureaucrat::GradeTooLowException& Bureaucrat::GradeTooLowException::operator=(Bureaucrat::GradeTooLowException const& rhs) {
+    if (this != &rhs) {
+    }
     return *this;
 }
 
 void Bureaucrat::incrementGrade() {
     if ((this->_grade - 1) < 1) {
-        Bureaucrat::GradeTooHighException();
+        throw Bureaucrat::GradeTooHighException();
     } else {
         this->_grade--;
     }
@@ -63,7 +67,7 @@ void Bureaucrat::incrementGrade() {
 
 void Bureaucrat::decrementGrade() {
     if ((this->_grade + 1) > 150) {
-        Bureaucrat::GradeTooLowException();
+        throw Bureaucrat::GradeTooLowException();
     } else {
         this->_grade++;
     }

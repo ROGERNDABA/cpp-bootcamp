@@ -6,7 +6,7 @@
 /*   By: Roger Ndaba <rogerndaba@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/11 08:32:59 by Roger Ndaba       #+#    #+#             */
-/*   Updated: 2019/06/12 11:31:23 by Roger Ndaba      ###   ########.fr       */
+/*   Updated: 2019/06/12 12:48:06 by Roger Ndaba      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ class Bureaucrat {
         GradeTooHighException(GradeTooHighException const &);
         GradeTooHighException &operator=(GradeTooHighException const &);
         virtual const char *what() const throw();
-        virtual ~GradeTooHighException(void);
     };
 
     class GradeTooLowException : std::exception {
@@ -35,7 +34,6 @@ class Bureaucrat {
         GradeTooLowException(GradeTooLowException const &);
         GradeTooLowException &operator=(GradeTooLowException const &);
         virtual const char *what() const throw();
-        virtual ~GradeTooLowException(void);
     };
 
     Bureaucrat();

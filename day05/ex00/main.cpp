@@ -6,10 +6,11 @@
 /*   By: Roger Ndaba <rogerndaba@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/11 09:29:43 by Roger Ndaba       #+#    #+#             */
-/*   Updated: 2019/06/12 11:30:39 by Roger Ndaba      ###   ########.fr       */
+/*   Updated: 2019/06/12 12:47:04 by Roger Ndaba      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
 #include "Bureaucrat.hpp"
 
 void underline(int len) {
@@ -20,44 +21,34 @@ void underline(int len) {
     std::cout << "\033[0m" << std::endl;
 }
 
-int main() {
-    std::cout << "\nBUREAUCRAT WITH GRADE < 1" << std::endl;
-    underline(25);
-    // std::cout << "\tBureaucrat a(\"Roger\", 0) : ";
-    // Bureaucrat a("Roger", 0);
-    // std::cout << "\ta : " << a << std::endl;
-
-    // std::cout << "\nBUREAUCRAT WITH GRADE > 150" << std::endl;
-    // underline(27);
-    // std::cout << "\tBureaucrat b(\"Roger\", 151) : ";
-    // Bureaucrat b("Roger", 151);
-    // std::cout << "\tb : " << b << std::endl;
-
-    // std::cout << "\nBUREAUCRAT WITH GRADE 1<=>150" << std::endl;
-    // underline(29);
-    // std::cout << "\tBureaucrat c(\"Roger\", 2) : \n";
-    // Bureaucrat c("Roger", 2);
-    // std::cout << "\tc : " << c << std::endl;
-    // Bureaucrat d("Roger", 149);
-    // std::cout << "\tBureaucrat d(\"Roger\", 149) : \n";
-    // std::cout << "\td : " << d << std::endl;
-
-    // std::cout << "\nBUREAUCRAT INCREMENT AND DECREMENT" << std::endl;
-    // underline(34);
-    // std::cout << "\tc.incrementGrade() : \n";
-    // c.incrementGrade();
-    // std::cout << "\tc : " << c << std::endl;
-
-    // std::cout << "\tc.incrementGrade() : ";
-    // c.incrementGrade();
-    // std::cout << "\tc : " << c << std::endl;
-
-    // std::cout << "\n\td.decrementGrade() : \n";
-    // d.decrementGrade();
-    // std::cout << "\td : " << d << std::endl;
-
-    // std::cout << "\td.decrementGrade() : ";
-    // d.decrementGrade();
-    // std::cout << "\td : " << d << std::endl;
-    // return 0;
+int main(int ac, char* av[]) {
+    if (ac > 2 && ac < 4) {
+        std::string str = "\nBUREAUCRAT ";
+        str.append(av[1]);
+        str.append(" WITH GRADE ");
+        str.append(av[2]);
+        std::cout << str << std::endl;
+        underline(str.length() - 1);
+        try {
+            Bureaucrat a(av[1], atoi(av[2]));
+            std::cout << "\tBureaucrat a(\"" << av[1]
+                      << "\", " << av[2] << ") : " << a << "\n";
+            std::cout << "\ta.incrementGrade() : ";
+            a.incrementGrade();
+            std::cout << a << std::endl;
+            std::cout << "\ta.decrementGrade() : ";
+            a.decrementGrade();
+            std::cout << a << std::endl;
+            std::cout << "\ta.decrementGrade() : ";
+            a.decrementGrade();
+            std::cout << a << std::endl;
+        } catch (Bureaucrat::GradeTooHighException& e) {
+            std::cerr << e.what() << "\n";
+        } catch (Bureaucrat::GradeTooLowException& e) {
+            std::cerr << e.what() << "\n";
+        }
+    } else {
+        std::cout << "Invalid input: specify only <name> and <grade>" << std::endl;
+    }
+    return 0;
 }
