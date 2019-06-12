@@ -6,7 +6,7 @@
 /*   By: Roger Ndaba <rogerndaba@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/11 15:31:44 by Roger Ndaba       #+#    #+#             */
-/*   Updated: 2019/06/12 14:21:54 by Roger Ndaba      ###   ########.fr       */
+/*   Updated: 2019/06/12 16:52:38 by Roger Ndaba      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,6 +98,31 @@ Form::GradeTooLowException& Form::GradeTooLowException::operator=(Form::GradeToo
     }
     return *this;
 }
+
+Form::UnsignedException::UnsignedException() {}
+
+Form::UnsignedException::UnsignedException(Form::UnsignedException const& copy) {
+    *this = copy;
+}
+
+const char* Form::UnsignedException::what() const throw() {
+    return ("\033[31mForm is not signed\033[0m");
+}
+
+Form::UnsignedException& Form::UnsignedException::operator=(Form::UnsignedException const& rhs) {
+    if (this != &rhs) {
+    }
+    return *this;
+}
+
+void Form::execute(Bureaucrat const& executor) const {
+    if (executor.getGrade() > _toExcecute) {
+        throw Form::GradeTooLowException();
+    }
+    if (!(_signed)) {
+        throw Form::UnsignedException();
+    }
+};
 
 std::ostream& operator<<(std::ostream& o, Form const& rhs) {
     o << rhs.getName() << " is " << ((rhs.getSigned()) ? "sigend " : "not signed ")

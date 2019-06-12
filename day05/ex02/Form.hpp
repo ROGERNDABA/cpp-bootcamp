@@ -6,7 +6,7 @@
 /*   By: Roger Ndaba <rogerndaba@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/11 15:30:51 by Roger Ndaba       #+#    #+#             */
-/*   Updated: 2019/06/12 14:31:27 by Roger Ndaba      ###   ########.fr       */
+/*   Updated: 2019/06/12 16:50:37 by Roger Ndaba      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,14 @@ class Form {
         virtual const char *what() const throw();
     };
 
+    class UnsignedException : std::exception {
+       public:
+        UnsignedException(void);
+        UnsignedException(UnsignedException const &);
+        UnsignedException &operator=(UnsignedException const &);
+        virtual const char *what() const throw();
+    };
+
     Form();
     Form(std::string, int, int);
     Form(Form const &);
@@ -49,7 +57,7 @@ class Form {
     std::string getName() const;
     int getToExcecute() const;
     int getToSign() const;
-    void execute(Bureaucrat const &) const;
+    virtual void execute(Bureaucrat const &) const;
     ~Form();
 };
 
