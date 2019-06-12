@@ -6,7 +6,7 @@
 /*   By: Roger Ndaba <rogerndaba@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/11 08:32:59 by Roger Ndaba       #+#    #+#             */
-/*   Updated: 2019/06/11 09:47:02 by Roger Ndaba      ###   ########.fr       */
+/*   Updated: 2019/06/12 08:53:34 by Roger Ndaba      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,11 @@
 #include <iostream>
 
 class Bureaucrat {
+    class GradeTooHighException : std::exception {
+       public:
+        virtual const char *what() const throw();
+    };
+
    private:
     const std::string _name;
     int _grade;

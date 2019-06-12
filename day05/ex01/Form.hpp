@@ -6,7 +6,7 @@
 /*   By: Roger Ndaba <rogerndaba@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/11 15:30:51 by Roger Ndaba       #+#    #+#             */
-/*   Updated: 2019/06/11 15:35:51 by Roger Ndaba      ###   ########.fr       */
+/*   Updated: 2019/06/12 10:05:33 by Roger Ndaba      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Form {
     const int _toExcecute;
 
    public:
-    Form();
+       Form();
     ~Form();
 };
 
