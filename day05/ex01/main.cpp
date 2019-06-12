@@ -6,7 +6,7 @@
 /*   By: Roger Ndaba <rogerndaba@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/11 09:29:43 by Roger Ndaba       #+#    #+#             */
-/*   Updated: 2019/06/12 13:01:58 by Roger Ndaba      ###   ########.fr       */
+/*   Updated: 2019/06/12 14:13:15 by Roger Ndaba      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,21 @@ void underline(int len) {
 
 int main() {
     try {
-        Form f;
-    } catch (Bureaucrat::GradeTooHighException& e) {
+        Form f("Holy", 42, 42);
+        std::cout << f << std::endl;
+        try {
+            Bureaucrat b("Roger", 60);
+            f.beSigned(b);
+        } catch (Bureaucrat::GradeTooLowException& e) {
+            std::cerr << e.what() << '\n';
+        } catch (Bureaucrat::GradeTooHighException& e) {
+            std::cerr << e.what() << '\n';
+        }
+        std::cout << f << std::endl;
+
+    } catch (Form::GradeTooLowException& e) {
+        std::cerr << e.what() << '\n';
+    } catch (Form::GradeTooHighException& e) {
         std::cerr << e.what() << '\n';
     }
 
