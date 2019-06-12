@@ -6,7 +6,7 @@
 /*   By: Roger Ndaba <rogerndaba@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/11 09:29:43 by Roger Ndaba       #+#    #+#             */
-/*   Updated: 2019/06/12 14:13:15 by Roger Ndaba      ###   ########.fr       */
+/*   Updated: 2019/06/12 14:16:05 by Roger Ndaba      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,9 @@ int main() {
             std::cerr << e.what() << '\n';
         }
         std::cout << f << std::endl;
+
+        Form d("Holy", 0, 0);
+        Form e("Holy", 150, 150);
 
     } catch (Form::GradeTooLowException& e) {
         std::cerr << e.what() << '\n';
