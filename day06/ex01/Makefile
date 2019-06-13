@@ -6,7 +6,7 @@
 #    By: Roger Ndaba <rogerndaba@gmail.com>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/13 15:16:22 by Roger Ndaba       #+#    #+#              #
-#    Updated: 2019/06/13 15:16:31 by Roger Ndaba      ###   ########.fr        #
+#    Updated: 2019/06/13 16:09:36 by Roger Ndaba      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = serialize
 
 CC = clang++ -Wall -Wextra -Werror -Wno-unused -std=c++98
 
-FILE = Scalar.cpp main.cpp
+FILE =  main.cpp
 
 all: $(NAME)
 
