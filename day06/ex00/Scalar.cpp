@@ -6,13 +6,18 @@
 /*   By: Roger Ndaba <rogerndaba@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 10:33:47 by Roger Ndaba       #+#    #+#             */
-/*   Updated: 2019/06/13 13:03:49 by Roger Ndaba      ###   ########.fr       */
+/*   Updated: 2019/06/13 13:31:02 by Roger Ndaba      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Scalar.hpp"
 
 Scalar::Scalar(std::string num) : _rawNum(num) {
+    try {
+        this->_num = stof(num);
+    } catch (const std::exception& e) {
+        std::cerr << "Not a literal value" << std::endl;
+    }
 }
 
 Scalar::NonDisplayableException::NonDisplayableException() {}
@@ -59,15 +64,21 @@ Scalar& Scalar::operator=(Scalar const& rhs) {
     return *this;
 }
 
-// char Scalar::toChar(double num) {
-// }
+char Scalar::toChar() {
+    char c;
+    if (isnan(_num)) {
+        throw Scalar::ImpossibleException();
+    }
+    c = static_cast<char>(_num);
+    return c;
+}
 
-// int Scalar::toInt(double num) {
-//     return;
-// };
-// double Scalar::toDouble(double num) {
-//     return;
-// };
-// float Scalar::toFloat(double num) {
-//     return;
-// };
+int Scalar::toInt() {
+        return;
+};
+double Scalar::toDouble() {
+    return;
+};
+float Scalar::toFloat() {
+    return;
+};

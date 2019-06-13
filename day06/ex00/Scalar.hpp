@@ -6,7 +6,7 @@
 /*   By: Roger Ndaba <rogerndaba@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 09:37:56 by Roger Ndaba       #+#    #+#             */
-/*   Updated: 2019/06/13 13:02:39 by Roger Ndaba      ###   ########.fr       */
+/*   Updated: 2019/06/13 13:28:07 by Roger Ndaba      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,16 @@
 
 #include <cmath>
 #include <fstream>
+#include <iomanip>
 #include <iostream>
+#include <sstream>
+#include <string>
 
 class Scalar {
    private:
     std::string _rawNum;
-    // double _num;
+    double _num;
+    int _precision;
 
    public:
     class NonDisplayableException : std::exception {
@@ -44,10 +48,10 @@ class Scalar {
     Scalar &operator=(Scalar const &);
     ~Scalar();
 
-    char toChar(double);
-    int toInt(double);
-    double toDouble(double);
-    float toFloat(double);
+    char toChar();
+    int toInt();
+    double toDouble();
+    float toFloat();
 };
 
 #endif  //SCALAR_HPP
