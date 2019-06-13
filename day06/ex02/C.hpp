@@ -6,23 +6,21 @@
 /*   By: Roger Ndaba <rogerndaba@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 16:15:24 by Roger Ndaba       #+#    #+#             */
-/*   Updated: 2019/06/13 16:15:30 by Roger Ndaba      ###   ########.fr       */
+/*   Updated: 2019/06/13 16:45:32 by Roger Ndaba      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef C_HPP
 #define C_HPP
 
-#include <cmath>
-#include <fstream>
-#include <iostream>
+#include "Base.hpp"
 
-class C {
+class C : public Base {
    private:
    public:
     C();
     C(C const &);
-    C &operator=(C const &);
+    using Base::operator=;
     ~C();
 };
 

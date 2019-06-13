@@ -6,7 +6,7 @@
 /*   By: Roger Ndaba <rogerndaba@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 16:14:53 by Roger Ndaba       #+#    #+#             */
-/*   Updated: 2019/06/13 16:15:21 by Roger Ndaba      ###   ########.fr       */
+/*   Updated: 2019/06/13 16:45:46 by Roger Ndaba      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,3 @@ C::~C() {}
 C::C(C const& copy) {
     *this = copy;
 };
-
-C& C::operator=(C const& rhs) {
-    if (this != &rhs) {
-    }
-    return *this;
-}

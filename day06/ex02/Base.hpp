@@ -1,21 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   A.cpp                                              :+:      :+:    :+:   */
+/*   Base.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Roger Ndaba <rogerndaba@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/13 16:13:34 by Roger Ndaba       #+#    #+#             */
-/*   Updated: 2019/06/13 16:45:53 by Roger Ndaba      ###   ########.fr       */
+/*   Created: 2019/06/13 16:16:55 by Roger Ndaba       #+#    #+#             */
+/*   Updated: 2019/06/13 16:41:55 by Roger Ndaba      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "A.hpp"
+#ifndef BASE_HPP
+#define BASE_HPP
 
-A::A() {}
+#include <cmath>
+#include <fstream>
+#include <iostream>
 
-A::~A() {}
+class A;
+class B;
+class C;
 
-A::A(A const& copy) {
-    *this = copy;
+class Base {
+   private:
+   public:
+    Base();
+    Base(Base const &);
+    Base &operator=(Base const &);
+    virtual ~Base();
 };
+
+#endif  //BASE_HPP
