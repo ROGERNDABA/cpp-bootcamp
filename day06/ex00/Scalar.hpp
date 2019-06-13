@@ -6,7 +6,7 @@
 /*   By: Roger Ndaba <rogerndaba@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 09:37:56 by Roger Ndaba       #+#    #+#             */
-/*   Updated: 2019/06/13 10:54:37 by Roger Ndaba      ###   ########.fr       */
+/*   Updated: 2019/06/13 13:02:39 by Roger Ndaba      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,9 @@
 
 class Scalar {
    private:
+    std::string _rawNum;
+    // double _num;
+
    public:
     class NonDisplayableException : std::exception {
        public:
@@ -36,10 +39,15 @@ class Scalar {
         virtual const char *what() const throw();
     };
 
-    Scalar();
+    Scalar(std::string);
     Scalar(Scalar const &);
     Scalar &operator=(Scalar const &);
     ~Scalar();
+
+    char toChar(double);
+    int toInt(double);
+    double toDouble(double);
+    float toFloat(double);
 };
 
 #endif  //SCALAR_HPP

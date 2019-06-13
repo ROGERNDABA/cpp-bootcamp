@@ -6,13 +6,14 @@
 /*   By: Roger Ndaba <rogerndaba@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 10:33:47 by Roger Ndaba       #+#    #+#             */
-/*   Updated: 2019/06/13 10:45:49 by Roger Ndaba      ###   ########.fr       */
+/*   Updated: 2019/06/13 13:03:49 by Roger Ndaba      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Scalar.hpp"
 
-Scalar::Scalar() {}
+Scalar::Scalar(std::string num) : _rawNum(num) {
+}
 
 Scalar::NonDisplayableException::NonDisplayableException() {}
 
@@ -57,3 +58,16 @@ Scalar& Scalar::operator=(Scalar const& rhs) {
     }
     return *this;
 }
+
+// char Scalar::toChar(double num) {
+// }
+
+// int Scalar::toInt(double num) {
+//     return;
+// };
+// double Scalar::toDouble(double num) {
+//     return;
+// };
+// float Scalar::toFloat(double num) {
+//     return;
+// };
