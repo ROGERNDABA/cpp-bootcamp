@@ -6,13 +6,14 @@
 /*   By: Roger Ndaba <rogerndaba@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 09:37:56 by Roger Ndaba       #+#    #+#             */
-/*   Updated: 2019/06/13 13:28:07 by Roger Ndaba      ###   ########.fr       */
+/*   Updated: 2019/06/13 14:32:15 by Roger Ndaba      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SCALAR_HPP
 #define SCALAR_HPP
 
+#include <climits>
 #include <cmath>
 #include <fstream>
 #include <iomanip>
@@ -48,10 +49,15 @@ class Scalar {
     Scalar &operator=(Scalar const &);
     ~Scalar();
 
-    char toChar();
-    int toInt();
-    double toDouble();
-    float toFloat();
+    void setPrecision();
+    int getPrecision();
+
+    char toChar() const;
+    int toInt() const;
+    double toDouble() const;
+    float toFloat() const;
 };
+
+std::ostream &operator<<(std::ostream &, Scalar const &);
 
 #endif  //SCALAR_HPP
