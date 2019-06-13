@@ -6,7 +6,7 @@
 /*   By: Roger Ndaba <rogerndaba@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/12 16:30:07 by Roger Ndaba       #+#    #+#             */
-/*   Updated: 2019/06/12 16:50:02 by Roger Ndaba      ###   ########.fr       */
+/*   Updated: 2019/06/12 17:04:56 by Roger Ndaba      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,28 @@ ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const &copy) 
 
 void ShrubberyCreationForm::execute(Bureaucrat const &executor) const {
     Form::execute(executor);
-    if (executor.getGrade() > this->_toSign || executor.getGrade() > this->_toExec) {
-        Form::GradeTooLowException();
+
+    std::string ouputFile = this->getTarget() + "_shrubbery";
+    std::ofstream ofs(ouputFile);
+
+    if (ofs.fail()) {
+        std::cerr << "Couldn't create file" << std::endl;
     } else {
-    
+        ofs << "                   @"
+            << "              @ @ @  @ @ @"
+            << "            @  @\\/@ @ /__@"
+            << "            @@@ @\\ / @/  @ @"
+            << "           @\\  \\/@| @ | @"
+            << "          @__\\@ \\ |/ \\| / @"
+            << "             __\\|@|  ||/__/@"
+            << "            /  \\ \\\\  / /__"
+            << "           @    \\  \\/ /   @"
+            << "                 |\" \'|"
+            << "                 |\"  |"
+            << "                 |\"  |"
+            << "                ~|\"  |~"
+            << "            ~~~~       ~~~~"
+            << "          ~~               ~~~";
     }
 }
 

@@ -6,7 +6,7 @@
 /*   By: Roger Ndaba <rogerndaba@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/11 15:30:51 by Roger Ndaba       #+#    #+#             */
-/*   Updated: 2019/06/12 16:50:37 by Roger Ndaba      ###   ########.fr       */
+/*   Updated: 2019/06/12 16:58:31 by Roger Ndaba      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ class Form {
    private:
     bool _signed;
     const std::string _name;
+    std::string _target;
     const int _toExcecute;
     const int _toSign;
 
@@ -47,7 +48,7 @@ class Form {
     };
 
     Form();
-    Form(std::string, int, int);
+    Form(std::string, std::string, int, int);
     Form(Form const &);
     Form &operator=(Form const &);
     int getToExcecute();
@@ -57,6 +58,7 @@ class Form {
     std::string getName() const;
     int getToExcecute() const;
     int getToSign() const;
+    std::string getTarget() const;
     virtual void execute(Bureaucrat const &) const;
     ~Form();
 };

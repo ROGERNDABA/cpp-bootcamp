@@ -6,7 +6,7 @@
 /*   By: Roger Ndaba <rogerndaba@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/11 15:31:44 by Roger Ndaba       #+#    #+#             */
-/*   Updated: 2019/06/12 16:52:38 by Roger Ndaba      ###   ########.fr       */
+/*   Updated: 2019/06/12 17:10:09 by Roger Ndaba      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,7 @@
 Form::Form() : _signed(false), _name(""), _toExcecute(1), _toSign(1) {
 }
 
-Form::Form(std::string name, int toSign, int toExcecute) : _signed(false),
-                                                           _name(name),
-                                                           _toExcecute(toExcecute),
-                                                           _toSign(toSign) {
+Form::Form(std::string target, std::string name, int toSign, int toExcecute) : _signed(false), _name(name), _target(target), _toExcecute(toExcecute), _toSign(toSign) {
     if (this->_toExcecute < 1 || this->_toSign < 1) {
         throw Form::GradeTooHighException();
     } else if (this->_toExcecute > 150 || this->_toSign > 150) {
@@ -36,6 +33,7 @@ Form& Form::operator=(Form const& rhs) {
 }
 
 Form::Form(Form const& copy) : _name(copy._name),
+                               _target(copy._target),
                                _toExcecute(copy._toExcecute),
                                _toSign(copy._toSign) {
     *this = copy;
@@ -64,6 +62,11 @@ int Form::getToExcecute() const {
 int Form::getToSign() const {
     return this->_toSign;
 };
+
+std::string Form::getTarget() const {
+    return this->_target;
+};
+
 Form::~Form() {
 }
 
