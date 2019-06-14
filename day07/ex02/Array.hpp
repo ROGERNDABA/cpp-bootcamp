@@ -6,7 +6,7 @@
 /*   By: Roger Ndaba <rogerndaba@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/14 10:16:41 by Roger Ndaba       #+#    #+#             */
-/*   Updated: 2019/06/14 12:50:14 by Roger Ndaba      ###   ########.fr       */
+/*   Updated: 2019/06/14 13:18:38 by Roger Ndaba      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,10 @@ class Array {
             std::cerr << e.what();
         }
         return this->_array[n];
+    }
+
+    int length() {
+        return this->_arrSize;
     }
 };
 
